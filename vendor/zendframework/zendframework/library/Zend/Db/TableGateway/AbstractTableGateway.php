@@ -315,6 +315,7 @@ abstract class AbstractTableGateway implements TableGatewayInterface
         if ($where !== null) {
             $update->where($where);
         }
+
         return $this->executeUpdate($update);
     }
 
@@ -340,6 +341,7 @@ abstract class AbstractTableGateway implements TableGatewayInterface
     protected function executeUpdate(Update $update)
     {
         $updateState = $update->getRawState();
+
         if ($updateState['table'] != $this->table) {
             throw new Exception\RuntimeException('The table name of the provided Update object must match that of the table');
         }

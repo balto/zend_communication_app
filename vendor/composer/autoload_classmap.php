@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WebinoImageThumb\\Module' => $vendorDir . '/webino/webino-image-thumb/Module.php',
 );

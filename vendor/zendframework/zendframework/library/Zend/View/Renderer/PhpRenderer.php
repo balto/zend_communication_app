@@ -494,6 +494,7 @@ class PhpRenderer implements Renderer, TreeRendererInterface
 
         while ($this->__template = array_pop($this->__templates)) {
             $this->__file = $this->resolver($this->__template);
+
             if (!$this->__file) {
                 throw new Exception\RuntimeException(sprintf(
                     '%s: Unable to render template "%s"; resolver could not resolve to a file',
@@ -519,7 +520,6 @@ class PhpRenderer implements Renderer, TreeRendererInterface
         }
 
         $this->setVars(array_pop($this->__varsCache));
-
         return $this->getFilterChain()->filter($this->__content); // filter output
     }
 

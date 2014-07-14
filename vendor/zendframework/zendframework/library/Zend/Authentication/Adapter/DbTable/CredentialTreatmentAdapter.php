@@ -43,8 +43,8 @@ class CredentialTreatmentAdapter extends AbstractAdapter
         parent::__construct($zendDb, $tableName, $identityColumn, $credentialColumn);
 
         if (null !== $credentialTreatment) {
-            $this->setCredentialTreatment($credentialTreatment);
         }
+	    $this->setCredentialTreatment($credentialTreatment);
     }
 
     /**

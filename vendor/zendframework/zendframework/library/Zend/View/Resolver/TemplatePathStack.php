@@ -305,6 +305,7 @@ class TemplatePathStack implements ResolverInterface
 
         foreach ($this->paths as $path) {
             $file = new SplFileInfo($path . $name);
+
             if ($file->isReadable()) {
                 // Found! Return it.
                 if (($filePath = $file->getRealPath()) === false && substr($path, 0, 7) === 'phar://') {
